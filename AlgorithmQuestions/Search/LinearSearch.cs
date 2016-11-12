@@ -18,7 +18,7 @@ namespace AlgorithmQuestions
         /// <summary>
         /// Looks for target number in the input array.
         /// Time complexity: O(n)
-        /// Space complexity: O(1)
+        /// Additional space complexity: O(1)
         /// </summary>
         /// <param name="inputs"></param>
         /// <param name="target"></param>

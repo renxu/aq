@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graph\DepthFirstTraveral.cs" />
+    <Compile Include="Graph\BreadthFirstTraveral.cs" />
+    <Compile Include="Graph\IGraph.cs" />
+    <Compile Include="Graph\LinkedListGraph.cs" />
+    <Compile Include="Graph\MatrixGraph.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Search\LinearSearch.cs" />
@@ -50,6 +55,8 @@
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
     <Compile Include="Utility\CommonUtility.cs" />
+    <Compile Include="Utility\SinglyLinkedList.cs" />
+    <Compile Include="Utility\SinglyLinkedListNode.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

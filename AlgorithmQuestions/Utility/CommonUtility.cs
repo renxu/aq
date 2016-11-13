@@ -8,6 +8,7 @@ namespace AlgorithmQuestions
 {
     public static class CommonUtility
     {
+        // TODO: Reimplement using bit operatons.
         public static void Swap(int[] array, int index1, int index2)
         {
             if (array == null)

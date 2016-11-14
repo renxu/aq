@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dynamic\FibonacciNumber.cs" />
+    <Compile Include="Dynamic\LongestIncreasingSubsequence.cs" />
     <Compile Include="Graph\DepthFirstTraveral.cs" />
     <Compile Include="Graph\BreadthFirstTraveral.cs" />
     <Compile Include="Graph\DetectCircle.cs" />

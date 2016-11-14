@@ -42,9 +42,11 @@
   <ItemGroup>
     <Compile Include="Graph\DepthFirstTraveral.cs" />
     <Compile Include="Graph\BreadthFirstTraveral.cs" />
+    <Compile Include="Graph\DetectCircle.cs" />
     <Compile Include="Graph\IGraph.cs" />
     <Compile Include="Graph\LinkedListGraph.cs" />
     <Compile Include="Graph\MatrixGraph.cs" />
+    <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Search\LinearSearch.cs" />

@@ -19,9 +19,9 @@ namespace AlgorithmQuestions
 
         public int EdgeNumber { get; private set; }
 
-        public bool IsDirectional { get; private set; }
+        public bool IsDirected { get; private set; }
 
-        public LinkedListGraph(int vertexNumber, bool isDirectional)
+        public LinkedListGraph(int vertexNumber, bool isDirected)
         {
             if (vertexNumber <= 0)
             {
@@ -30,7 +30,7 @@ namespace AlgorithmQuestions
 
             this.VertexNumber = vertexNumber;
             this.EdgeNumber = 0;
-            this.IsDirectional = isDirectional;
+            this.IsDirected = isDirected;
 
             this.graph = new SinglyLinkedList<int>[VertexNumber];
             for(int i = 0; i < vertexNumber; i++)
@@ -87,7 +87,7 @@ namespace AlgorithmQuestions
                 linkedList.Insert(targetVertexIndex);
                 this.EdgeNumber++;
 
-                if (!IsDirectional)
+                if (!IsDirected)
                 {
                     var linkedList2 = graph[targetVertexIndex];
                     linkedList2.Insert(sourceVertexIndex);
@@ -101,6 +101,11 @@ namespace AlgorithmQuestions
         }
 
         public IList<Tuple<int, int, int>> GetEdges(int vertexIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Tuple<int, int, int>> GetAllEdges()
         {
             throw new NotImplementedException();
         }

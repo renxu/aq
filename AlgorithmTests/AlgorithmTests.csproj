@@ -52,9 +52,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Graph\DetectCircleTests.cs" />
     <Compile Include="Graph\DepthFirstTraveralTests.cs" />
     <Compile Include="Graph\BreadthFirstTraveralTests.cs" />
     <Compile Include="Graph\LinkedListGraphTests.cs" />
+    <Compile Include="Greedy\MinimumSpanningTreeTests.cs" />
     <Compile Include="Graph\MatrixGraphTests.cs" />
     <Compile Include="Greedy\ActivitySelectionTests.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />

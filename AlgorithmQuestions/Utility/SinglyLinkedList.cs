@@ -6,6 +6,25 @@ namespace AlgorithmQuestions
     {
         public SinglyLinkedListNode<T> First { get; set; }
 
+        public SinglyLinkedListNode<T> Last
+        {
+            get
+            {
+                if (this.First == null)
+                {
+                    return null;
+                }
+
+                var node = this.First;
+                while (node.Next != null)
+                {
+                    node = node.Next;
+                }
+
+                return node;
+            }
+        }
+
         public SinglyLinkedListNode<T> Insert(T value)
         {
             var node = new SinglyLinkedListNode<T>(value);

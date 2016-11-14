@@ -17,9 +17,9 @@ namespace AlgorithmQuestions
 
         public int EdgeNumber { get; private set; }
 
-        public bool IsDirectional { get; private set; }
+        public bool IsDirected { get; private set; }
 
-        public MatrixGraph(int vertexNumber, bool isDirectional)
+        public MatrixGraph(int vertexNumber, bool isDirected)
         {
             if (vertexNumber <= 0)
             {
@@ -28,7 +28,7 @@ namespace AlgorithmQuestions
 
             this.VertexNumber = vertexNumber;
             this.EdgeNumber = 0;
-            this.IsDirectional = isDirectional;
+            this.IsDirected = isDirected;
 
             this.maxtrix = new int[vertexNumber][];
             for(int i = 0; i < vertexNumber; i++)
@@ -82,7 +82,7 @@ namespace AlgorithmQuestions
             }
 
             maxtrix[sourceVertexIndex][targetVertexIndex] = weight;
-            if (!IsDirectional)
+            if (!IsDirected)
             {
                 maxtrix[targetVertexIndex][sourceVertexIndex] = weight;
             }
@@ -105,7 +105,7 @@ namespace AlgorithmQuestions
             }
 
             maxtrix[sourceVertexIndex][targetVertexIndex] = NoEdgeValue;
-            if (!IsDirectional)
+            if (!IsDirected)
             {
                 maxtrix[targetVertexIndex][sourceVertexIndex] = NoEdgeValue;
             }
@@ -130,6 +130,23 @@ namespace AlgorithmQuestions
             return edges;
         }
 
+        public IList<Tuple<int, int, int>> GetAllEdges()
+        {
+            var edges = new List<Tuple<int, int, int>>();
+            for (int i = 0; i < this.VertexNumber; i++)
+            {
+                for (int j = i; j < this.VertexNumber; j++)
+                {
+                    if (this.maxtrix[i][j] != NoEdgeValue)
+                    {
+                        edges.Add(new Tuple<int, int, int>(i, j, this.maxtrix[i][j]));
+                    }
+                }
+            }
+
+            return edges;
+        }
+
         public void PrintGraph()
         {
             Console.WriteLine(string.Format("The graph has {0} vertices.", this.VertexNumber));
@@ -140,7 +157,7 @@ namespace AlgorithmQuestions
             header.Append(" ");
             for (int i = 0; i < this.VertexNumber; i++)
             {
-                header.Append("  ");
+                header.Append('\t');
                 header.Append(i);
             }
 
@@ -153,7 +170,7 @@ namespace AlgorithmQuestions
                 line.Append(i);
                 for (int j = 0; j < this.VertexNumber; j++)
                 {
-                    line.Append("  ");
+                    line.Append('\t');
                     line.Append(maxtrix[i][j]);
                 }
 

@@ -9,7 +9,7 @@ namespace AlgorithmQuestions
 
         int EdgeNumber { get; }
 
-        bool IsDirectional { get; }
+        bool IsDirected { get; }
 
         void SetVertexName(int vertexIndex, string name);
 
@@ -22,5 +22,9 @@ namespace AlgorithmQuestions
         void RemoveEdge(int sourceVertexIndex, int targetVertexIndex);
 
         IList<Tuple<int, int, int>> GetEdges(int vertexIndex);
+
+        IList<Tuple<int, int, int>> GetAllEdges();
+
+        void PrintGraph();
     }
 }

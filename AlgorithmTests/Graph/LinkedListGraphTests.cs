@@ -7,7 +7,7 @@ namespace AlgorithmTests
     public class LinkedListGraphTests
     {
         [TestMethod]
-        public void LinkedListGraph_CreateGraph_UndirectionalUnweighted()
+        public void LinkedListGraph_CreateGraph_UndirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/graph_representation12.png
             var graph = new LinkedListGraph(5, false);
@@ -22,7 +22,7 @@ namespace AlgorithmTests
         }
 
         [TestMethod]
-        public void LinkedListGraph_CreateGraph_DirectionalUnweighted()
+        public void LinkedListGraph_CreateGraph_DirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/BFS.jpg
             var graph = new LinkedListGraph(4, true);

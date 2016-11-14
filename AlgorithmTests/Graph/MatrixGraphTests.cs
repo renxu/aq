@@ -7,7 +7,7 @@ namespace AlgorithmTests
     public class MatrixGraphTests
     {
         [TestMethod]
-        public void MatrixGraph_CreateGraph_UndirectionalUnweighted()
+        public void MatrixGraph_CreateGraph_UndirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/graph_representation12.png
             var graph = new MatrixGraph(5, false);
@@ -22,7 +22,7 @@ namespace AlgorithmTests
         }
 
         [TestMethod]
-        public void MatrixGraph_CreateGraph_DirectionalUnweighted()
+        public void MatrixGraph_CreateGraph_DirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/BFS.jpg
             var graph = new MatrixGraph(4, true);

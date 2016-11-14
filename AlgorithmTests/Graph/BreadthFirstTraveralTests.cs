@@ -8,7 +8,7 @@ namespace AlgorithmTests
     public class BreadthFirstTraveralTests
     {
         [TestMethod]
-        public void BreadthFirstTraveral_Traverse_UndirectionalUnweighted()
+        public void BreadthFirstTraveral_Traverse_UndirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/graph_representation12.png
             var graph = new MatrixGraph(5, false);
@@ -25,7 +25,7 @@ namespace AlgorithmTests
         }
 
         [TestMethod]
-        public void BreadthFirstTraveral_Traverse_DirectionalUnweighted()
+        public void BreadthFirstTraveral_Traverse_DirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/BFS.jpg
             var graph = new MatrixGraph(4, true);

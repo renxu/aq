@@ -8,7 +8,7 @@ namespace AlgorithmTests
     public class DepthFirstTraveralTests
     {
         [TestMethod]
-        public void DepthFirstTraveral_Traverse_UndirectionalUnweighted()
+        public void DepthFirstTraveral_Traverse_UndirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/graph_representation12.png
             var graph = new LinkedListGraph(5, false);
@@ -25,7 +25,7 @@ namespace AlgorithmTests
         }
 
         [TestMethod]
-        public void DepthFirstTraveral_Traverse_DirectionalUnweighted()
+        public void DepthFirstTraveral_Traverse_DirectedUnweighted()
         {
             // Graph: http://degottd575b1t.cloudfront.net//wp-content/uploads/BFS.jpg
             var graph = new LinkedListGraph(4, true);

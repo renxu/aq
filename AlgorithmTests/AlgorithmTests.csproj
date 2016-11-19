@@ -52,6 +52,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Backtrack\RatInMazeTests.cs" />
+    <Compile Include="Backtrack\KnightsTourTests.cs" />
+    <Compile Include="Backtrack\StringPermutationTests.cs" />
+    <Compile Include="Dynamic\LongestCommonSubsequenceTests.cs" />
     <Compile Include="Dynamic\LongestIncreasingSubsequenceTests.cs" />
     <Compile Include="Dynamic\FibonacciNumberTests.cs" />
     <Compile Include="Graph\DetectCircleTests.cs" />
@@ -61,6 +65,7 @@
     <Compile Include="Greedy\MinimumSpanningTreeTests.cs" />
     <Compile Include="Graph\MatrixGraphTests.cs" />
     <Compile Include="Greedy\ActivitySelectionTests.cs" />
+    <Compile Include="PatternSearch\NaiveSearchTests.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />
     <Compile Include="Search\LinearSearchTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

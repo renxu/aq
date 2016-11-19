@@ -33,5 +33,13 @@ namespace AlgorithmQuestions
             array[index1] = array[index2];
             array[index2] = temp;
         }
+
+        public static void ThrowIfNull(object paramater)
+        {
+            if (paramater == null)
+            {
+                throw new ArgumentNullException();
+            }
+        }
     }
 }

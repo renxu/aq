@@ -43,6 +43,9 @@
     <Compile Include="Backtrack\KnightsTour.cs" />
     <Compile Include="Backtrack\RatInMaze.cs" />
     <Compile Include="Backtrack\StringPermutation.cs" />
+    <Compile Include="Bit\FindSingle.cs" />
+    <Compile Include="Bit\SetBitsCounter.cs" />
+    <Compile Include="Bit\SwapBits.cs" />
     <Compile Include="DivideConquer\MedianOfTwoSortedArray.cs" />
     <Compile Include="DivideConquer\InversionCounter.cs" />
     <Compile Include="DivideConquer\PowerCaculator.cs" />
@@ -57,6 +60,7 @@
     <Compile Include="Graph\MatrixGraph.cs" />
     <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
+    <Compile Include="Mathematical\MutipleOfThree.cs" />
     <Compile Include="PatternSearch\NaiveSearch.cs" />
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Search\LinearSearch.cs" />

@@ -55,6 +55,9 @@
     <Compile Include="Backtrack\RatInMazeTests.cs" />
     <Compile Include="Backtrack\KnightsTourTests.cs" />
     <Compile Include="Backtrack\StringPermutationTests.cs" />
+    <Compile Include="Bit\SwapBitsTests.cs" />
+    <Compile Include="Bit\SetBitsCounterTests.cs" />
+    <Compile Include="Bit\FindSingleTests.cs" />
     <Compile Include="DivideConquer\InversionCounterTests.cs" />
     <Compile Include="DivideConquer\MedianOfTwoSortedArrayTests.cs" />
     <Compile Include="DivideConquer\PowerCaculatorTests.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Greedy\MinimumSpanningTreeTests.cs" />
     <Compile Include="Graph\MatrixGraphTests.cs" />
     <Compile Include="Greedy\ActivitySelectionTests.cs" />
+    <Compile Include="Mathematical\MutipleOfThreeTests.cs" />
     <Compile Include="PatternSearch\NaiveSearchTests.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />
     <Compile Include="Search\LinearSearchTests.cs" />

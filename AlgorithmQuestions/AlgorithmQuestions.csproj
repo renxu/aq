@@ -43,6 +43,9 @@
     <Compile Include="Backtrack\KnightsTour.cs" />
     <Compile Include="Backtrack\RatInMaze.cs" />
     <Compile Include="Backtrack\StringPermutation.cs" />
+    <Compile Include="DivideConquer\MedianOfTwoSortedArray.cs" />
+    <Compile Include="DivideConquer\InversionCounter.cs" />
+    <Compile Include="DivideConquer\PowerCaculator.cs" />
     <Compile Include="Dynamic\FibonacciNumber.cs" />
     <Compile Include="Dynamic\LongestCommonSubsequence.cs" />
     <Compile Include="Dynamic\LongestIncreasingSubsequence.cs" />
@@ -67,9 +70,7 @@
     <Compile Include="Utility\SinglyLinkedList.cs" />
     <Compile Include="Utility\SinglyLinkedListNode.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DivideConquer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

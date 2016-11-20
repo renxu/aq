@@ -55,6 +55,9 @@
     <Compile Include="Backtrack\RatInMazeTests.cs" />
     <Compile Include="Backtrack\KnightsTourTests.cs" />
     <Compile Include="Backtrack\StringPermutationTests.cs" />
+    <Compile Include="DivideConquer\InversionCounterTests.cs" />
+    <Compile Include="DivideConquer\MedianOfTwoSortedArrayTests.cs" />
+    <Compile Include="DivideConquer\PowerCaculatorTests.cs" />
     <Compile Include="Dynamic\LongestCommonSubsequenceTests.cs" />
     <Compile Include="Dynamic\LongestIncreasingSubsequenceTests.cs" />
     <Compile Include="Dynamic\FibonacciNumberTests.cs" />

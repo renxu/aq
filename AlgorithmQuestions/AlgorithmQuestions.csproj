@@ -46,6 +46,9 @@
     <Compile Include="Bit\FindSingle.cs" />
     <Compile Include="Bit\SetBitsCounter.cs" />
     <Compile Include="Bit\SwapBits.cs" />
+    <Compile Include="BranchBound\JobAssignment.cs" />
+    <Compile Include="BST\BinarySearchTree.cs" />
+    <Compile Include="BST\BinarySearchTreeNode.cs" />
     <Compile Include="DivideConquer\MedianOfTwoSortedArray.cs" />
     <Compile Include="DivideConquer\InversionCounter.cs" />
     <Compile Include="DivideConquer\PowerCaculator.cs" />
@@ -74,7 +77,9 @@
     <Compile Include="Utility\SinglyLinkedList.cs" />
     <Compile Include="Utility\SinglyLinkedListNode.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Randomized\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

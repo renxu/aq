@@ -70,14 +70,14 @@ namespace AlgorithmQuestions
         /// <param name="bitmap"></param>
         /// <param name="position">Position from right most to left are 0, 1, 2...</param>
         /// <returns></returns>
-        public static int Mark(int bitmap, int position)
+        public static int Flip(int bitmap, int position)
         {
             if (position < 0)
             {
                 throw new ArgumentException();
             }
 
-            return (1 << position) | bitmap;
+            return (1 << position) ^ bitmap;
         }
     }
 }

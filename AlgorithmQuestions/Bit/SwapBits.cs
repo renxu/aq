@@ -36,6 +36,14 @@ namespace AlgorithmQuestions
             return number;
         }
 
+        /// <summary>
+        /// Time O(1)
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="p1"></param>
+        /// <param name="p2"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static int SwapPairs2(int number, int p1, int p2, int n)
         {
             if (p1 < 0 || p2 < 0 || n < 0 || IsOverlaping(p1, p1 + n - 1, p2, p2 + n - 1))

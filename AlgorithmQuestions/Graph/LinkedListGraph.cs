@@ -84,13 +84,13 @@ namespace AlgorithmQuestions
             var linkedList = graph[sourceVertexIndex];
             if (!linkedList.ContainsValue(targetVertexIndex))
             {
-                linkedList.Insert(targetVertexIndex);
+                linkedList.InsertAtFirst(targetVertexIndex);
                 this.EdgeNumber++;
 
                 if (!IsDirected)
                 {
                     var linkedList2 = graph[targetVertexIndex];
-                    linkedList2.Insert(sourceVertexIndex);
+                    linkedList2.InsertAtFirst(sourceVertexIndex);
                 }
             }
         }

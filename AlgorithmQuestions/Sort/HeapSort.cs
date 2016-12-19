@@ -34,123 +34,15 @@ namespace AlgorithmQuestions
 
             // Build a max heap in place
             // Time complexity = O(nlogn)
-            BuildMaxHeap(inputs);
+            var maxHeap = new MaxHeap<int>(inputs);
 
-            // Loop (i is the number of max number that are found so far)
-
-            // Time complexity = O(nlogn)
-            for (int i = 0; i < inputs.Length - 1; i++)
+            // Extract the root of the max heap, put it to the end of the array, and repeat.
+            for(int i = inputs.Length - 1; i >= 0; i--)
             {
-                // Swap first and last
-                CommonUtility.Swap(inputs, 0, inputs.Length - 1 - i);
-
-                // Reduce heap by one, heapify the root
-                // Time complexity = O(logn)
-                SinkNode(inputs, 0, inputs.Length - 2 - i);
+                inputs[i] = maxHeap.Extract();
             }
 
             return inputs;
-        }
-
-        private static void BuildMaxHeap(int[] inputs)
-        {
-            
-            for (int i = 1; i < inputs.Length; i++)
-            {
-                RiseNode(inputs, i);
-            }
-        }
-
-        // Time complexity = O(logn)
-        private static void RiseNode(int[] inputs, int index)
-        {
-            if (index <= 0)
-            {
-                return;
-            }
-
-            int parentIndex = GetParentIndex(index);
-            if (inputs[index] > inputs[parentIndex])
-            {
-                CommonUtility.Swap(inputs, index, parentIndex);
-                RiseNode(inputs, parentIndex);
-            }
-        }
-
-        private static void SinkNode(int[] inputs, int index, int lastIndex)
-        {
-            if (index >= lastIndex)
-            {
-                return;
-            }
-
-            // Get left child
-            int leftChildIndex = GetLeftChildIndex(index, lastIndex);
-
-            // Get right child
-            int rightChildIndex = GetRightChildIndex(index, lastIndex);
-
-            // Find the largest of the three
-            int largestIndex = index;
-
-            if(leftChildIndex != -1)
-            {
-                if (inputs[leftChildIndex] > inputs[largestIndex])
-                {
-                    largestIndex = leftChildIndex;
-                }
-            }
-
-            if (rightChildIndex != -1)
-            {
-                if (inputs[rightChildIndex] > inputs[largestIndex])
-                {
-                    largestIndex = rightChildIndex;
-                }
-            }
-
-            // Swap if needed and keep sinking
-            if (largestIndex != index)
-            {
-                CommonUtility.Swap(inputs, index, largestIndex);
-                SinkNode(inputs, largestIndex, lastIndex);
-            }
-        }
-
-        private static int GetParentIndex(int childIndex)
-        {
-            if (childIndex <= 0)
-            {
-                throw new ArgumentException("childIndex is invalid.");
-            }
-
-            return (childIndex - 1) / 2;
-        }
-
-        private static int GetLeftChildIndex(int parentIndex, int lastIndex)
-        {
-            int leftChildIndex = parentIndex * 2 + 1;
-            if (leftChildIndex <= lastIndex)
-            {
-                return leftChildIndex;
-            }
-            else
-            {
-                return -1;
-            }
-        }
-
-        private static int GetRightChildIndex(int parentIndex, int lastIndex)
-        {
-            int rightChildIndex = parentIndex * 2 + 2;
-            if (rightChildIndex <= lastIndex)
-            {
-                return rightChildIndex;
-            }
-            else
-            {
-                return -1;
-            }
         }
     }
 }

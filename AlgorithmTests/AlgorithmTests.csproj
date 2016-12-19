@@ -73,6 +73,9 @@
     <Compile Include="Greedy\MinimumSpanningTreeTests.cs" />
     <Compile Include="Graph\MatrixGraphTests.cs" />
     <Compile Include="Greedy\ActivitySelectionTests.cs" />
+    <Compile Include="Heap\MinHeapTests.cs" />
+    <Compile Include="LinkedList\MergeSortedListsTests.cs" />
+    <Compile Include="LinkedList\SinglyLinkedListTests.cs" />
     <Compile Include="Mathematical\MutipleOfThreeTests.cs" />
     <Compile Include="PatternSearch\NaiveSearchTests.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />
@@ -83,6 +86,9 @@
     <Compile Include="Sort\MergeSortTests.cs" />
     <Compile Include="Sort\HeapSortTests.cs" />
     <Compile Include="Sort\SelectionSortTests.cs" />
+    <Compile Include="Stack\ParenthesisPairValidatorTests.cs" />
+    <Compile Include="Stack\DoubleStackTests.cs" />
+    <Compile Include="Stack\PostfixExpressionEvaluationTests.cs" />
     <Compile Include="TestUtility.cs" />
   </ItemGroup>
   <ItemGroup>

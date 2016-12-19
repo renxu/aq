@@ -63,6 +63,10 @@
     <Compile Include="Graph\MatrixGraph.cs" />
     <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
+    <Compile Include="Heap\HeapBasic.cs" />
+    <Compile Include="Heap\MaxHeap.cs" />
+    <Compile Include="Heap\MinHeap.cs" />
+    <Compile Include="LinkedList\MergeSortedLists.cs" />
     <Compile Include="Mathematical\MutipleOfThree.cs" />
     <Compile Include="PatternSearch\NaiveSearch.cs" />
     <Compile Include="Search\BinarySearch.cs" />
@@ -73,9 +77,12 @@
     <Compile Include="Sort\MergeSort.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
+    <Compile Include="Stack\DoubleStack.cs" />
+    <Compile Include="Stack\ParenthesisPairValidator.cs" />
+    <Compile Include="Stack\PostfixExpressionEvaluation.cs" />
     <Compile Include="Utility\CommonUtility.cs" />
-    <Compile Include="Utility\SinglyLinkedList.cs" />
-    <Compile Include="Utility\SinglyLinkedListNode.cs" />
+    <Compile Include="LinkedList\SinglyLinkedList.cs" />
+    <Compile Include="LinkedList\SinglyLinkedListNode.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Randomized\" />

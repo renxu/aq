@@ -55,11 +55,12 @@
     <Compile Include="Backtrack\RatInMazeTests.cs" />
     <Compile Include="Backtrack\KnightsTourTests.cs" />
     <Compile Include="Backtrack\StringPermutationTests.cs" />
+    <Compile Include="BinaryTree\BinaryTreeTests.cs" />
     <Compile Include="Bit\SwapBitsTests.cs" />
     <Compile Include="Bit\SetBitsCounterTests.cs" />
     <Compile Include="Bit\FindSingleTests.cs" />
     <Compile Include="BranchBound\JobAssignmentTests.cs" />
-    <Compile Include="BST\BinarySearchTreeTests.cs" />
+    <Compile Include="BinaryTree\BinarySearchTreeTests.cs" />
     <Compile Include="DivideConquer\InversionCounterTests.cs" />
     <Compile Include="DivideConquer\MedianOfTwoSortedArrayTests.cs" />
     <Compile Include="DivideConquer\PowerCaculatorTests.cs" />

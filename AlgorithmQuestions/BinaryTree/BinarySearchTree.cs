@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AlgorithmQuestions
 {
     public class BinarySearchTree<T> where T : IComparable
     {
-        public BinarySearchTreeNode<T> Root { get; set; }
+        public BinaryTreeNode<T> Root { get; set; }
 
-        public BinarySearchTree(BinarySearchTreeNode<T> root)
+        public BinarySearchTree(BinaryTreeNode<T> root)
         {
             this.Root = root;
         }
@@ -15,16 +16,16 @@ namespace AlgorithmQuestions
         {
         }
 
-        public BinarySearchTreeNode<T> Search(T value)
+        public BinaryTreeNode<T> Search(T value)
         {
             return this.Search(this.Root, value);
         }
 
-        public BinarySearchTreeNode<T> Insert(T value)
+        public BinaryTreeNode<T> Insert(T value)
         {
             if (this.Root == null)
             {
-                this.Root = new BinarySearchTreeNode<T>(value);
+                this.Root = new BinaryTreeNode<T>(value);
                 return this.Root;
             }
 
@@ -94,8 +95,8 @@ namespace AlgorithmQuestions
                 foundNode.Value = minValue;
             }
         }
-
-        private BinarySearchTreeNode<T> Search(BinarySearchTreeNode<T> currentNode, T value)
+        
+        private BinaryTreeNode<T> Search(BinaryTreeNode<T> currentNode, T value)
         {
             if (currentNode == null)
             {
@@ -117,7 +118,7 @@ namespace AlgorithmQuestions
             }
         }
 
-        private BinarySearchTreeNode<T> InsertUnder(BinarySearchTreeNode<T> currentNode, T value)
+        private BinaryTreeNode<T> InsertUnder(BinaryTreeNode<T> currentNode, T value)
         {
             if (currentNode == null)
             {
@@ -133,7 +134,7 @@ namespace AlgorithmQuestions
             {
                 if (currentNode.RightChild == null)
                 {
-                    currentNode.RightChild = new BinarySearchTreeNode<T>(value, currentNode);
+                    currentNode.RightChild = new BinaryTreeNode<T>(value, currentNode);
                     return currentNode.RightChild;
                 }
                 else
@@ -145,7 +146,7 @@ namespace AlgorithmQuestions
             {
                 if (currentNode.LeftChild == null)
                 {
-                    currentNode.LeftChild = new BinarySearchTreeNode<T>(value, currentNode);
+                    currentNode.LeftChild = new BinaryTreeNode<T>(value, currentNode);
                     return currentNode.LeftChild;
                 }
                 else
@@ -155,14 +156,14 @@ namespace AlgorithmQuestions
             }
         }
 
-        private BinarySearchTreeNode<T> FindMinimumIn(BinarySearchTreeNode<T> currentNode)
+        private BinaryTreeNode<T> FindMinimumIn(BinaryTreeNode<T> currentNode)
         {
             if (currentNode == null)
             {
                 throw new ArgumentNullException("currentNode");
             }
 
-            BinarySearchTreeNode<T> minNode = currentNode;
+            BinaryTreeNode<T> minNode = currentNode;
             if (minNode.LeftChild == null)
             {
                 return minNode;

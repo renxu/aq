@@ -43,12 +43,14 @@
     <Compile Include="Backtrack\KnightsTour.cs" />
     <Compile Include="Backtrack\RatInMaze.cs" />
     <Compile Include="Backtrack\StringPermutation.cs" />
+    <Compile Include="BinaryTree\TraversalOrder.cs" />
     <Compile Include="Bit\FindSingle.cs" />
     <Compile Include="Bit\SetBitsCounter.cs" />
     <Compile Include="Bit\SwapBits.cs" />
     <Compile Include="BranchBound\JobAssignment.cs" />
-    <Compile Include="BST\BinarySearchTree.cs" />
-    <Compile Include="BST\BinarySearchTreeNode.cs" />
+    <Compile Include="BinaryTree\BinarySearchTree.cs" />
+    <Compile Include="BinaryTree\BinaryTree.cs" />
+    <Compile Include="BinaryTree\BinaryTreeNode.cs" />
     <Compile Include="DivideConquer\MedianOfTwoSortedArray.cs" />
     <Compile Include="DivideConquer\InversionCounter.cs" />
     <Compile Include="DivideConquer\PowerCaculator.cs" />
@@ -69,6 +71,8 @@
     <Compile Include="LinkedList\MergeSortedLists.cs" />
     <Compile Include="Mathematical\MutipleOfThree.cs" />
     <Compile Include="PatternSearch\NaiveSearch.cs" />
+    <Compile Include="Queue\Deque.cs" />
+    <Compile Include="Queue\PriorityQueue.cs" />
     <Compile Include="Search\BinarySearch.cs" />
     <Compile Include="Search\LinearSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -65,6 +65,7 @@
     <Compile Include="Graph\MatrixGraph.cs" />
     <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
+    <Compile Include="Heap\AlmostSorted.cs" />
     <Compile Include="Heap\HeapBasic.cs" />
     <Compile Include="Heap\MaxHeap.cs" />
     <Compile Include="Heap\MinHeap.cs" />

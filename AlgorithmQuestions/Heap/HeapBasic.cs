@@ -22,6 +22,7 @@ namespace AlgorithmQuestions
                 throw new ArgumentException(string.Format("The heap exceeded the size limit: {0}", SizeLimit));
             }
 
+            // Build heap 
             data = new T[SizeLimit];
             foreach (var value in values)
             {
@@ -38,7 +39,7 @@ namespace AlgorithmQuestions
             // Add the value to the end of the heap, and run heapify-up on that node.
             lastValueIndex++;
             data[lastValueIndex] = value;
-            HeapifyUp(lastValueIndex);
+            SiftUp(lastValueIndex);
         }
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace AlgorithmQuestions
                 // And run heapify-down on the root node.
                 data[0] = data[lastValueIndex];
                 lastValueIndex--;
-                this.HeapifyDown(0);
+                this.SiftDown(0);
             }
             else
             {
@@ -137,7 +138,7 @@ namespace AlgorithmQuestions
         /// For max heap: Ensure that parents are larger than children.
         /// </summary>
         /// <param name="index"></param>
-        private void HeapifyUp(int index)
+        private void SiftUp(int index)
         {
             int current = index;
 
@@ -168,7 +169,7 @@ namespace AlgorithmQuestions
         /// For max heap: Ensure that parents are larger than children.
         /// </summary>
         /// <param name="index"></param>
-        private void HeapifyDown(int index)
+        private void SiftDown(int index)
         {
             int current = index;
 
@@ -261,8 +262,8 @@ namespace AlgorithmQuestions
         /// <returns></returns>
         private int TopIndex(int index1, int index2, int index3)
         {
-            int winner = data[index1].CompareTo(data[index2]) > 0 ? index1 : index2;
-            return data[winner].CompareTo(data[index3]) > 0 ? winner : index3;
+            int winner = this.Compare(index1, index2) > 0 ? index1 : index2;
+            return this.Compare(winner, index2) > 0 ? winner : index3;
         }
     }
 }

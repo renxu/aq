@@ -174,7 +174,7 @@ namespace AlgorithmQuestions
             }
         }
 
-        #region
+        #region Inorder predecessor and successor for a given key in BST
         /// <summary>
         /// There is BST given with root node with key part as integer only. 
         /// You need to find the inorder successor and predecessor of a given key. 
@@ -291,6 +291,76 @@ namespace AlgorithmQuestions
             else
             {
                 return currentNode.Value;
+            }
+        }
+
+        #endregion
+
+        #region Two nodes of a BST are swapped, correct the BST
+        /// <summary>
+        /// Algorithm:  Since inorder traversal of BST is always a sorted array, the problem can be reduced to a problem 
+        /// where two elements of a sorted array are swapped. There are two cases that we need to handle:
+        /// 1. The swapped nodes are not adjacent in the inorder traversal of the BST.
+        /// 2. The swapped nodes are adjacent in the inorder traversal of BST.
+        /// </summary>
+        public void CorrectSwappedNodes()
+        {
+            // Generate in-order list
+            var traversal = new List<BinaryTreeNode<T>>();
+            this.TraverseInOrder(this.Root, traversal);
+
+            // Find swapped nodes and correct them.
+            BinaryTreeNode<T> firstNode = null;
+            BinaryTreeNode<T> nodeAfterFirstNode = null;
+            BinaryTreeNode<T> secondNode = null;
+            BinaryTreeNode<T> previousNode = null;
+
+            foreach(var currentNode in traversal)
+            {
+                if (previousNode != null)
+                {
+                    if (currentNode.Value.CompareTo(previousNode.Value) < 0)
+                    {
+                        if (firstNode == null)
+                        {
+                            firstNode = previousNode;
+                            nodeAfterFirstNode = currentNode;
+                        }
+                        else
+                        {
+                            secondNode = currentNode;
+                            break;
+                        }
+                    }
+                }
+
+                previousNode = currentNode;
+            }
+
+            if (firstNode != null)
+            {
+                if (secondNode != null)
+                {
+                    T temp = firstNode.Value;
+                    firstNode.Value = secondNode.Value;
+                    secondNode.Value = temp;
+                }
+                else
+                {
+                    T temp = firstNode.Value;
+                    firstNode.Value = nodeAfterFirstNode.Value;
+                    nodeAfterFirstNode.Value = temp;
+                }
+            }
+        }
+
+        private void TraverseInOrder(BinaryTreeNode<T> currentNode, List<BinaryTreeNode<T>> traversal)
+        {
+            if (currentNode != null)
+            {
+                this.TraverseInOrder(currentNode.LeftChild, traversal);
+                traversal.Add(currentNode);
+                this.TraverseInOrder(currentNode.RightChild, traversal);
             }
         }
 

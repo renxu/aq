@@ -91,6 +91,101 @@ namespace AlgorithmTests
             tree.ToString();
         }
 
+        public void BinarySearchTree_FindInOrderNeighbours_Found_Basic()
+        {
+            /* Result tree
+                 5
+                / \
+               2  12
+              /\  /\
+            -4  3 9 21
+                 /  /\
+                8  19 25
+            */
+            var tree = this.BuildTree();
+            int predecessor;
+            int successor;
+            tree.FindInOrderNeighbours(12, out predecessor, out successor);
+            Assert.AreEqual(9, predecessor, "Wrong predecessor.");
+            Assert.AreEqual(19, successor, "Wrong successor.");
+        }
+
+        public void BinarySearchTree_FindInOrderNeighbours_Found_NoRightSubtree()
+        {
+            /* Result tree
+                 5
+                / \
+               2  12
+              /\  /\
+            -4  3 9 21
+                 /  /\
+                8  19 25
+            */
+            var tree = this.BuildTree();
+            int predecessor;
+            int successor;
+            tree.FindInOrderNeighbours(9, out predecessor, out successor);
+            Assert.AreEqual(9, predecessor, "Wrong predecessor.");
+            Assert.AreEqual(12, successor, "Wrong successor.");
+        }
+
+        public void BinarySearchTree_FindInOrderNeighbours_Found_LeefNode()
+        {
+            /* Result tree
+                 5
+                / \
+               2  12
+              /\  /\
+            -4  3 9 21
+                 /  /\
+                8  19 25
+            */
+            var tree = this.BuildTree();
+            int predecessor;
+            int successor;
+            tree.FindInOrderNeighbours(8, out predecessor, out successor);
+            Assert.AreEqual(5, predecessor, "Wrong predecessor.");
+            Assert.AreEqual(9, successor, "Wrong successor.");
+        }
+
+        public void BinarySearchTree_FindInOrderNeighbours_Found_Root()
+        {
+            /* Result tree
+                 5
+                / \
+               2  12
+              /\  /\
+            -4  3 9 21
+                 /  /\
+                8  19 25
+            */
+            var tree = this.BuildTree();
+            int predecessor;
+            int successor;
+            tree.FindInOrderNeighbours(5, out predecessor, out successor);
+            Assert.AreEqual(3, predecessor, "Wrong predecessor.");
+            Assert.AreEqual(8, successor, "Wrong successor.");
+        }
+
+        public void BinarySearchTree_FindInOrderNeighbours_NotFound()
+        {
+            /* Result tree
+                 5
+                / \
+               2  12
+              /\  /\
+            -4  3 9 21
+                 /  /\
+                8  19 25
+            */
+            var tree = this.BuildTree();
+            int predecessor;
+            int successor;
+            tree.FindInOrderNeighbours(10, out predecessor, out successor);
+            Assert.AreEqual(9, predecessor, "Wrong predecessor.");
+            Assert.AreEqual(12, successor, "Wrong successor.");
+        }
+
         private BinarySearchTree<int> BuildTree()
         {
             var tree = new BinarySearchTree<int>();

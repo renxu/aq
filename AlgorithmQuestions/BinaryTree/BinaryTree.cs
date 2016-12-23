@@ -73,35 +73,6 @@ namespace AlgorithmQuestions
             return traversal;
         }
 
-        private void TraverseDepthFirst(BinaryTreeNode<T> current, List<BinaryTreeNode<T>> history, TraversalOrder order)
-        {
-            if (current == null)
-            {
-                return;
-            }
-
-            switch(order)
-            {
-                case TraversalOrder.PreOrder:
-                    history.Add(current);
-                    this.TraverseDepthFirst(current.LeftChild, history, order);
-                    this.TraverseDepthFirst(current.RightChild, history, order);
-                    break;
-
-                case TraversalOrder.InOrder:
-                    this.TraverseDepthFirst(current.LeftChild, history, order);
-                    history.Add(current);
-                    this.TraverseDepthFirst(current.RightChild, history, order);
-                    break;
-
-                case TraversalOrder.PostOrder:
-                    this.TraverseDepthFirst(current.LeftChild, history, order);
-                    this.TraverseDepthFirst(current.RightChild, history, order);
-                    history.Add(current);
-                    break;
-            }
-        }
-
         /// <summary>
         /// Assuming no duplicate values.
         /// Inorder sequence: D B E A F C
@@ -131,7 +102,7 @@ namespace AlgorithmQuestions
             // Convert travesal into value array 
             T[] inOrder = new T[inOrderTraversal.Count()];
             int inOrderIndex = -1;
-            foreach(var node in inOrderTraversal)
+            foreach (var node in inOrderTraversal)
             {
                 inOrderIndex++;
                 inOrder[inOrderIndex] = node.Value;
@@ -149,6 +120,35 @@ namespace AlgorithmQuestions
             return tree;
         }
 
+        private void TraverseDepthFirst(BinaryTreeNode<T> current, List<BinaryTreeNode<T>> history, TraversalOrder order)
+        {
+            if (current == null)
+            {
+                return;
+            }
+
+            switch(order)
+            {
+                case TraversalOrder.PreOrder:
+                    history.Add(current);
+                    this.TraverseDepthFirst(current.LeftChild, history, order);
+                    this.TraverseDepthFirst(current.RightChild, history, order);
+                    break;
+
+                case TraversalOrder.InOrder:
+                    this.TraverseDepthFirst(current.LeftChild, history, order);
+                    history.Add(current);
+                    this.TraverseDepthFirst(current.RightChild, history, order);
+                    break;
+
+                case TraversalOrder.PostOrder:
+                    this.TraverseDepthFirst(current.LeftChild, history, order);
+                    this.TraverseDepthFirst(current.RightChild, history, order);
+                    history.Add(current);
+                    break;
+            }
+        }
+        
         private static BinaryTreeNode<T> ReconstructNode(T[] inOrder, int inOrderStartIndex, int inOrderEndIndex, T[] preOrder, int preOrderStartIndex, int preOrderEndIndex, BinaryTreeNode<T> parent)
         {
             var currentNode = new BinaryTreeNode<T>(preOrder[preOrderStartIndex]);

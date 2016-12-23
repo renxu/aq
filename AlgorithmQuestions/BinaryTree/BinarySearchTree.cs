@@ -173,5 +173,127 @@ namespace AlgorithmQuestions
                 return this.FindMinimumIn(minNode.LeftChild);
             }
         }
+
+        #region
+        /// <summary>
+        /// There is BST given with root node with key part as integer only. 
+        /// You need to find the inorder successor and predecessor of a given key. 
+        /// In case the given key is not found in BST, then return the two values within which this key will lie.
+        /// Note: The tree cannot contain zero because use of default(T).
+        /// 
+        /// Algorithm: 
+        /// 1. Use binary search trying to locate the target. Record lower bound (potential precessor) and upper bound (potential successor)
+        ///    along the search path.
+        /// 2. If the value is found: 
+        /// 2.1. If the found node has left child, the precessor must be the most right leaf of the left substree. Otherwise, the precessor is the lower bound.
+        /// 2.2. If the found node has right child, the successor must be the most left leaf of the right substree. Otherwise, the successor is the upper bound.
+        /// 3. If the value is not found:
+        /// 3.1 Return lower bound as precessor and upper bound as successor.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="predecessor"></param>
+        /// <param name="successor"></param>
+        public void FindInOrderNeighbours(T value, out T predecessor, out T successor)
+        {
+            FindInOrderNeighbours(this.Root, value, default(T), default(T), out predecessor, out successor);
+        }
+
+        private void FindInOrderNeighbours(BinaryTreeNode<T> currentNode, T value, T lowerBound, T upperBound, out T predecessor, out T successor)
+        {
+            predecessor = default(T);
+            successor = default(T);
+
+            if (currentNode == null)
+            {
+                return;
+            }
+
+            int comparison = currentNode.Value.CompareTo(value);
+            if (comparison == 0)
+            {
+                predecessor = this.FindPredecessor(currentNode, lowerBound);
+                successor = this.FindSuccessor(currentNode, upperBound);
+            }
+            else if (comparison > 0)
+            {
+                // Search in left branch
+                upperBound = currentNode.Value;
+                if (currentNode.LeftChild != null)
+                {
+                    FindInOrderNeighbours(currentNode.LeftChild, value, lowerBound, upperBound, out predecessor, out successor);
+                }
+                else
+                {
+                    // No match
+                    predecessor = lowerBound;
+                    successor = upperBound;
+                }
+            }
+            else
+            {
+                // Search in right branch
+                lowerBound = currentNode.Value;
+                if (currentNode.RightChild != null)
+                {
+                    FindInOrderNeighbours(currentNode.RightChild, value, lowerBound, upperBound, out predecessor, out successor);
+                }
+                else
+                {
+                    // No match
+                    predecessor = lowerBound;
+                    successor = upperBound;
+                }
+            }
+        }
+
+        private T FindPredecessor(BinaryTreeNode<T> currentNode, T lowerBound)
+        {
+            if (currentNode.LeftChild != null)
+            {
+                return FindMaxInSubtree(currentNode.LeftChild);
+            }
+            else
+            {
+                return lowerBound;
+            }
+        }
+
+        private T FindMaxInSubtree(BinaryTreeNode<T> currentNode)
+        {
+            if (currentNode.RightChild != null)
+            {
+                return FindMaxInSubtree(currentNode.RightChild);
+            }
+            else
+            {
+                return currentNode.Value;
+            }
+        }
+
+        private T FindSuccessor(BinaryTreeNode<T> currentNode, T upperBound)
+        {
+            if (currentNode.RightChild != null)
+            {
+                return FindMinInSubtree(currentNode.RightChild);
+            }
+            else
+            {
+                return upperBound;
+            }
+        }
+
+        private T FindMinInSubtree(BinaryTreeNode<T> currentNode)
+        {
+            if (currentNode.LeftChild != null)
+            {
+                return FindMinInSubtree(currentNode.LeftChild);
+            }
+            else
+            {
+                return currentNode.Value;
+            }
+        }
+
+        #endregion
     }
 }

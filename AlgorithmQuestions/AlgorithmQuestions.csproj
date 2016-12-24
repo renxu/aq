@@ -60,11 +60,13 @@
     <Compile Include="Graph\DepthFirstTraveral.cs" />
     <Compile Include="Graph\BreadthFirstTraveral.cs" />
     <Compile Include="Graph\DetectCircle.cs" />
+    <Compile Include="Graph\GraphEdge.cs" />
     <Compile Include="Graph\IGraph.cs" />
     <Compile Include="Graph\LinkedListGraph.cs" />
     <Compile Include="Graph\MatrixGraph.cs" />
     <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
+    <Compile Include="Hash\MajorityElement.cs" />
     <Compile Include="Hash\PairWithSum.cs" />
     <Compile Include="Heap\AlmostSorted.cs" />
     <Compile Include="Heap\HeapBasic.cs" />

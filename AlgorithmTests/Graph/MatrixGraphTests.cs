@@ -51,5 +51,30 @@ namespace AlgorithmTests
             Console.WriteLine(CommonUtility.ToString(result));
             Console.WriteLine("Manually validate results!");
         }
+
+        [TestMethod]
+        public void MatrixGraph_DijkstrasShortestPath_Basic()
+        {
+            // Graph: http://d1hyf4ir1gqw6c.cloudfront.net//wp-content/uploads/Fig-11.jpg
+            // Shortest paths: http://d1hyf4ir1gqw6c.cloudfront.net//wp-content/uploads/DIJ5.jpg
+            var graph = new MatrixGraph(9, false);
+            graph.AddEdge(0, 1, 4);
+            graph.AddEdge(0, 7, 8);
+            graph.AddEdge(1, 2, 8);
+            graph.AddEdge(1, 7, 11);
+            graph.AddEdge(2, 3, 7);
+            graph.AddEdge(2, 5, 4);
+            graph.AddEdge(2, 8, 2);
+            graph.AddEdge(3, 4, 9);
+            graph.AddEdge(3, 5, 14);
+            graph.AddEdge(4, 5, 10);
+            graph.AddEdge(5, 6, 2);
+            graph.AddEdge(6, 7, 1);
+            graph.AddEdge(6, 8, 6);
+            graph.AddEdge(7, 8, 7);
+            int[] result = graph.DijkstrasShortestPath(0, 4);
+            Console.WriteLine(CommonUtility.ToString(result)); // 0, 7, 6, 5, 4
+            Console.WriteLine("Manually validate results!");
+        }
     }
 }

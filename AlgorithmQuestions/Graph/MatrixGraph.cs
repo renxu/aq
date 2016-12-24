@@ -154,6 +154,9 @@ namespace AlgorithmQuestions
         /// topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of stack. 
         /// Note that a vertex is pushed to stack only when all of its adjacent vertices (and their adjacent vertices and so on) 
         /// are already in stack.
+        /// 
+        /// The algorithm is greedy. We start from the source vertice and span out, similarly to spanning tree. Each time, 
+        /// among the remaining nodes, we span to a node which has the shortest distance to the source node.
         /// </summary>
         /// <returns></returns>
 
@@ -200,6 +203,91 @@ namespace AlgorithmQuestions
             return true;
         }
 
+        #endregion
+
+        #region Dijkstra's shortest path
+        public int[] DijkstrasShortestPath(int sourceVertextIndex, int targetVertextIndex)
+        {
+            var distances = new List<GraphEdge>(); // Weight is the distance to the source node.
+            for (int i = 0; i < this.VertexNumber; i++)
+            {
+                if (i == sourceVertextIndex)
+                {
+                    distances.Add(new GraphEdge(-1, i, 0));
+                }
+                else
+                {
+                    distances.Add(new GraphEdge(-1, i, int.MaxValue));
+                }
+            }
+
+            var visited = new bool[this.VertexNumber];
+            var edgeStack = new Stack<GraphEdge>(); 
+            while(edgeStack.Count < this.VertexNumber)
+            {
+                // Include the smallest edge
+                GraphEdge minDistance = null;
+                foreach (var distance in distances)
+                {
+                    if (!visited[distance.TargetVertexIndex])
+                    {
+                        if (minDistance == null)
+                        {
+                            minDistance = distance;
+                        }
+                        else if (distance.Weight < minDistance.Weight)
+                        {
+                            minDistance = distance;
+                        }
+                    }
+                }
+
+                edgeStack.Push(minDistance);
+                visited[minDistance.TargetVertexIndex] = true;
+
+                if (minDistance.TargetVertexIndex == targetVertextIndex)
+                {
+                    break;
+                }
+
+                // Update distances
+                for (int vertexIndex = 0; vertexIndex < this.VertexNumber; vertexIndex++)
+                {
+                    if (!visited[vertexIndex])
+                    {
+                        foreach(var edge in this.GetEdges(vertexIndex))
+                        {
+                            if (visited[edge.Item2] && distances[edge.Item2].Weight + edge.Item3 < distances[vertexIndex].Weight) // hard part
+                            {
+                                distances[vertexIndex].Weight = distances[edge.Item2].Weight + edge.Item3;
+                                distances[vertexIndex].SourceVertexIndex = edge.Item2;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Find result path
+            var pathStack = new Stack<int>();
+            int targetIndex = targetVertextIndex;
+            while(edgeStack.Count > 0)
+            {
+                GraphEdge edge = edgeStack.Pop();
+                if (edge.TargetVertexIndex == targetIndex)
+                {
+                    pathStack.Push(targetIndex);
+                    targetIndex = edge.SourceVertexIndex;
+                }
+            }
+
+            var result = new int[pathStack.Count];
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = pathStack.Pop();
+            }
+
+            return result;
+        }
         #endregion
 
         public void PrintGraph()

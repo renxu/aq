@@ -74,6 +74,7 @@
     <Compile Include="Greedy\MinimumSpanningTreeTests.cs" />
     <Compile Include="Graph\MatrixGraphTests.cs" />
     <Compile Include="Greedy\ActivitySelectionTests.cs" />
+    <Compile Include="Hash\PairWithSumTests.cs" />
     <Compile Include="Heap\AlmostSortedTests.cs" />
     <Compile Include="Heap\MinHeapTests.cs" />
     <Compile Include="LinkedList\MergeSortedListsTests.cs" />

@@ -1,4 +1,5 @@
-﻿using AlgorithmQuestions;
+﻿using System;
+using AlgorithmQuestions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AlgorithmTests
@@ -33,6 +34,22 @@ namespace AlgorithmTests
             graph.AddEdge(2, 0);
             graph.AddEdge(3, 3);
             graph.PrintGraph();
+        }
+
+        [TestMethod]
+        public void MatrixGraph_TopologicalSort_Basic()
+        {
+            // Graph: http://d1hyf4ir1gqw6c.cloudfront.net//wp-content/uploads/graph.png
+            var graph = new MatrixGraph(6, true);
+            graph.AddEdge(2, 3);
+            graph.AddEdge(3, 1);
+            graph.AddEdge(4, 0);
+            graph.AddEdge(4, 1);
+            graph.AddEdge(5, 0);
+            graph.AddEdge(5, 2);
+            int[] result = graph.TopoloicalSort();
+            Console.WriteLine(CommonUtility.ToString(result));
+            Console.WriteLine("Manually validate results!");
         }
     }
 }

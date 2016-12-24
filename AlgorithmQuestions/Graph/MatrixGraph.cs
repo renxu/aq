@@ -147,6 +147,61 @@ namespace AlgorithmQuestions
             return edges;
         }
 
+        #region Topological sort
+        /// <summary>
+        /// Algorithm: In DFS, we start from a vertex, we first print it and then recursively call DFS for its adjacent vertices. 
+        /// In topological sorting, we use a temporary stack. We don’t print the vertex immediately, we first recursively call 
+        /// topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of stack. 
+        /// Note that a vertex is pushed to stack only when all of its adjacent vertices (and their adjacent vertices and so on) 
+        /// are already in stack.
+        /// </summary>
+        /// <returns></returns>
+
+        public int[] TopoloicalSort()
+        {
+            if (!this.IsDirected)
+            {
+                throw new ArgumentException();
+            }
+
+            bool[] visited = new bool[this.VertexNumber];
+            var stack = new Stack<int>();
+            for (int vertexIndex = 0; vertexIndex < this.VertexNumber; vertexIndex++)
+            {
+                if (!visited[vertexIndex])
+                {
+                    this.Visit(vertexIndex, visited, stack);
+                }
+            }
+
+            int[] result = new int[this.VertexNumber];
+            for (int i = 0; i < this.VertexNumber; i++)
+            {
+                result[i] = stack.Pop();
+            }
+
+            return result;
+        }
+
+        private bool Visit(int vertexIndex, bool[] visited, Stack<int> stack)
+        {
+            visited[vertexIndex] = true;
+
+            foreach(var edge in this.GetEdges(vertexIndex))
+            {
+                if (!visited[edge.Item2])
+                {
+                    this.Visit(edge.Item2, visited, stack);
+                }
+            }
+
+            stack.Push(vertexIndex);
+
+            return true;
+        }
+
+        #endregion
+
         public void PrintGraph()
         {
             Console.WriteLine(string.Format("The graph has {0} vertices.", this.VertexNumber));

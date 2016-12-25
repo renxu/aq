@@ -15,18 +15,20 @@ namespace AlgorithmQuestions
 
         public HeapBasic(IEnumerable<T> values)
         {
-            CommonUtility.ThrowIfNull(values);
-
-            if (values.Count() > SizeLimit)
-            {
-                throw new ArgumentException(string.Format("The heap exceeded the size limit: {0}", SizeLimit));
-            }
-
-            // Build heap 
             data = new T[SizeLimit];
-            foreach (var value in values)
+
+            if (values != null)
             {
-                this.Insert(value);
+                if (values.Count() > SizeLimit)
+                {
+                    throw new ArgumentException(string.Format("The heap exceeded the size limit: {0}", SizeLimit));
+                }
+
+                // Build heap 
+                foreach (var value in values)
+                {
+                    this.Insert(value);
+                }
             }
         }
 
@@ -59,6 +61,7 @@ namespace AlgorithmQuestions
                 // Replace the root of the heap with the last element on the last level.
                 // And run heapify-down on the root node.
                 data[0] = data[lastValueIndex];
+                data[lastValueIndex] = default(T);
                 lastValueIndex--;
                 this.SiftDown(0);
             }
@@ -256,14 +259,14 @@ namespace AlgorithmQuestions
         /// For min heap, top index has the smallest value.
         /// For max heap, top index has the largest value.
         /// </summary>
-        /// <param name="index1"></param>
-        /// <param name="index2"></param>
-        /// <param name="index3"></param>
+        /// <param name="parent"></param>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
         /// <returns></returns>
-        private int TopIndex(int index1, int index2, int index3)
+        private int TopIndex(int parent, int left, int right)
         {
-            int winner = this.Compare(index1, index2) > 0 ? index1 : index2;
-            return this.Compare(winner, index2) > 0 ? winner : index3;
+            int winner = this.Compare(parent, left) > 0 ? parent : left;
+            return this.Compare(winner, right) > 0 ? winner : right;
         }
     }
 }

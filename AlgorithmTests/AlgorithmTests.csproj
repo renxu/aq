@@ -67,6 +67,7 @@
     <Compile Include="Dynamic\LongestCommonSubsequenceTests.cs" />
     <Compile Include="Dynamic\LongestIncreasingSubsequenceTests.cs" />
     <Compile Include="Dynamic\FibonacciNumberTests.cs" />
+    <Compile Include="Graph\StronglyConnectedComponentsTests.cs" />
     <Compile Include="Graph\DetectCircleTests.cs" />
     <Compile Include="Graph\DepthFirstTraveralTests.cs" />
     <Compile Include="Graph\BreadthFirstTraveralTests.cs" />

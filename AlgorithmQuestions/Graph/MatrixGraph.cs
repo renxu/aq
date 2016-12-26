@@ -290,6 +290,25 @@ namespace AlgorithmQuestions
         }
         #endregion
 
+        /// <summary>
+        /// This implementation simply transpose itself instead of creating a new graph.
+        /// </summary>
+        /// <returns></returns>
+        public IGraph GetTransposeGraph()
+        {
+            for (int i = 0; i < this.VertexNumber; i++)
+            {
+                for (int j = i + 1; j < this.VertexNumber; j++)
+                {
+                    int temp = this.maxtrix[i][j];
+                    this.maxtrix[i][j] = this.maxtrix[j][i];
+                    this.maxtrix[j][i] = temp;
+                }
+            }
+
+            return this;
+        }
+
         public void PrintGraph()
         {
             Console.WriteLine(string.Format("The graph has {0} vertices.", this.VertexNumber));

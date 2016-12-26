@@ -121,6 +121,11 @@ namespace AlgorithmQuestions
             return this.graph[vertexIndex];
         }
 
+        public IGraph GetTransposeGraph()
+        {
+            throw new NotImplementedException();
+        }
+
         public void PrintGraph()
         {
             Console.WriteLine(string.Format("The graph has {0} vertices.", this.VertexNumber));

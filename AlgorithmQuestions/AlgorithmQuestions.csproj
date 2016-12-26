@@ -64,6 +64,7 @@
     <Compile Include="Graph\IGraph.cs" />
     <Compile Include="Graph\LinkedListGraph.cs" />
     <Compile Include="Graph\MatrixGraph.cs" />
+    <Compile Include="Graph\StronglyConnectedComponents.cs" />
     <Compile Include="Greedy\MinimumSpanningTree.cs" />
     <Compile Include="Greedy\ActivitySelection.cs" />
     <Compile Include="Hash\MajorityElement.cs" />

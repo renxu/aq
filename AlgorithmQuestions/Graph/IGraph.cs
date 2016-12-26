@@ -25,6 +25,8 @@ namespace AlgorithmQuestions
 
         IList<Tuple<int, int, int>> GetAllEdges();
 
+        IGraph GetTransposeGraph();
+
         void PrintGraph();
     }
 }

@@ -25,6 +25,7 @@ namespace AlgorithmQuestions
                 }
 
                 // Build heap - solution 1: Perform N inserts
+                // Time complexity: O(nlogn)
                 ////foreach (var value in values)
                 ////{
                 ////    this.Insert(value);
@@ -33,6 +34,7 @@ namespace AlgorithmQuestions
                 // Build heap - solution 2:
                 // a. Randomly populate initial heap with structure property.
                 // b. Perform a sift-down from each non-leaf node
+                // Time complexity: O(n)
                 foreach (var value in values)
                 {
                     lastValueIndex++;

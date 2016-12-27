@@ -24,10 +24,24 @@ namespace AlgorithmQuestions
                     throw new ArgumentException(string.Format("The heap exceeded the size limit: {0}", SizeLimit));
                 }
 
-                // Build heap 
+                // Build heap - solution 1: Perform N inserts
+                ////foreach (var value in values)
+                ////{
+                ////    this.Insert(value);
+                ////}
+
+                // Build heap - solution 2:
+                // a. Randomly populate initial heap with structure property.
+                // b. Perform a sift-down from each non-leaf node
                 foreach (var value in values)
                 {
-                    this.Insert(value);
+                    lastValueIndex++;
+                    data[lastValueIndex] = value;
+                }
+
+                for (int i = (values.Count() / 2) - 1; i >= 0; i--)
+                {
+                    this.SiftDown(i);
                 }
             }
         }

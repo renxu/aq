@@ -26,6 +26,11 @@ namespace AlgorithmQuestions
                 throw new ArgumentNullException("pattern");
             }
 
+            if (pattern.Length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             var matches = new List<int>();
             if (pattern.Length > text.Length)
             {

@@ -77,6 +77,7 @@
     <Compile Include="Heap\MinHeap.cs" />
     <Compile Include="LinkedList\MergeSortedLists.cs" />
     <Compile Include="Mathematical\MutipleOfThree.cs" />
+    <Compile Include="PatternSearch\KmpSearch.cs" />
     <Compile Include="PatternSearch\NaiveSearch.cs" />
     <Compile Include="Queue\Deque.cs" />
     <Compile Include="Queue\PriorityQueue.cs" />

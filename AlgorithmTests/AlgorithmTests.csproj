@@ -83,6 +83,7 @@
     <Compile Include="LinkedList\MergeSortedListsTests.cs" />
     <Compile Include="LinkedList\SinglyLinkedListTests.cs" />
     <Compile Include="Mathematical\MutipleOfThreeTests.cs" />
+    <Compile Include="PatternSearch\KmpSearchTests.cs" />
     <Compile Include="PatternSearch\NaiveSearchTests.cs" />
     <Compile Include="Queue\PriorityQueueTests.cs" />
     <Compile Include="Search\BinarySearchTests.cs" />

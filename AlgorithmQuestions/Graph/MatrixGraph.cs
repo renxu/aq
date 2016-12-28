@@ -290,6 +290,89 @@ namespace AlgorithmQuestions
         }
         #endregion
 
+        #region Longest path in DAG
+        public int GetLongestPath(int sourceVertexindex, int targetVertextIndex)
+        {
+            if(!this.IsDirected)
+            {
+                throw new ArgumentException();
+            }
+
+            if (sourceVertexindex >= this.VertexNumber 
+                || targetVertextIndex >= this.VertexNumber 
+                || sourceVertexindex < 0
+                || targetVertextIndex < 0
+                || sourceVertexindex == targetVertextIndex)
+            {
+                throw new ArgumentException();
+            }
+
+            int[] topologicalSort = this.TopoloicalSort();
+            int[] longestPaths = new int[this.VertexNumber];
+            for (int i = 0; i < longestPaths.Length; i++)
+            {
+                if (topologicalSort[i] == sourceVertexindex)
+                {
+                    longestPaths[i] = 0;
+                }
+                else
+                {
+                    longestPaths[i] = int.MinValue;
+                }
+                
+            }
+
+            bool meetSource = false;
+            for (int i = 0; i < longestPaths.Length; i++)
+            {
+                // Do no path cost calculation for vertices before the source vertex.
+                if (topologicalSort[i] == sourceVertexindex)
+                {
+                    meetSource = true;
+                }
+
+                if (meetSource)
+                {
+                    if(topologicalSort[i] != targetVertextIndex)
+                    {
+                        var edges = this.GetEdges(topologicalSort[i]);
+                        foreach(var edge in edges)
+                        {
+                            int edgeTargetSortIndex = FindInArray(topologicalSort, edge.Item2);
+                            longestPaths[edgeTargetSortIndex] = Math.Max(longestPaths[edgeTargetSortIndex], longestPaths[i] + edge.Item3);
+                        }
+                    }
+                    else
+                    {
+                        return longestPaths[i];
+                    }
+                }
+                else if (topologicalSort[i] == targetVertextIndex)
+                {
+                    // The target vertext comes before the source vertex.
+                    // There is no path from source to target.
+                    break;
+                }
+            }
+
+            return int.MinValue;
+        }
+
+        private static int FindInArray(int[] values, int value)
+        {
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] == value)
+                {
+                    return i;
+                }
+            }
+
+            throw new ArgumentException("Not found"); 
+        }
+
+        #endregion
+
         /// <summary>
         /// This implementation simply transpose itself instead of creating a new graph.
         /// </summary>

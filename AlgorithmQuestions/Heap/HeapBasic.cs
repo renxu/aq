@@ -103,6 +103,11 @@ namespace AlgorithmQuestions
             return data[0];
         }
 
+        public int GetCount()
+        {
+            return lastValueIndex + 1;
+        }
+
         public void PrintHeap()
         {
             var sb = new StringBuilder();

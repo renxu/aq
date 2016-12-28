@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// The algorithms don't remember the best assignments, only the min cost.
+    /// </summary>
     public class JobAssignment
     {
         private int[,] costMatrix;
@@ -38,27 +41,33 @@ namespace AlgorithmQuestions
 
         private void AssignRemainingJobsByByBacktrack(int currentTotalCost)
         {
+            // Find a job for the next worker
             for (int jobIndex = 0; jobIndex < costMatrix.GetLength(1); jobIndex++)
             {
                 if (!CommonUtility.IsMarked(assignedJobBitMap, jobIndex))
                 {
                     int newTotalCost = currentTotalCost + costMatrix[assignedJobPath.Count, jobIndex];
-                    if (assignedJobPath.Count == costMatrix.GetLength(1) - 1)
+                    assignedJobPath.Add(jobIndex);
+                    assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
+
+                    if (assignedJobPath.Count == costMatrix.GetLength(1))
                     {
                         // All jobs are assigned
                         minTotalCost = Math.Min(minTotalCost, newTotalCost);
                     }
                     else if (newTotalCost < minTotalCost)
                     {
-                        // If the total cost is already greater than or equal to min total cost. No need to continue this path.
-                        assignedJobPath.Add(jobIndex);
-                        assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
-
+                        // Continue the path
                         AssignRemainingJobsByByBacktrack(newTotalCost);
-
-                        assignedJobPath.RemoveAt(assignedJobPath.Count - 1);
-                        assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
                     }
+                    else
+                    {
+                        // do nothing
+                        // If the total cost is already greater than or equal to min total cost. No need to continue this path.
+                    }
+
+                    assignedJobPath.RemoveAt(assignedJobPath.Count - 1);
+                    assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
                 }
             }
         }
@@ -74,7 +83,101 @@ namespace AlgorithmQuestions
         /// <returns></returns>
         public int FindMinCostByBranchBound()
         {
-            throw new NotImplementedException();
+            minTotalCost = int.MaxValue;
+            assignedJobPath = new List<int>();
+            assignedJobBitMap = 0;
+
+            FindGoodSolutionByGreedy();
+            AssignRemainingJobsByByBranchBound(0);
+
+            return minTotalCost;
+        }
+
+        private void AssignRemainingJobsByByBranchBound(int currentTotalCost)
+        {
+            int bestPossible = FindMinPossibleCost(currentTotalCost);
+            if (minTotalCost <= bestPossible)
+            {
+                return;
+            }
+
+            // Find a job for the next worker
+            for (int jobIndex = 0; jobIndex < costMatrix.GetLength(1); jobIndex++)
+            {
+                if (!CommonUtility.IsMarked(assignedJobBitMap, jobIndex))
+                {
+                    int newTotalCost = currentTotalCost + costMatrix[assignedJobPath.Count, jobIndex];
+                    assignedJobPath.Add(jobIndex);
+                    assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
+
+                    if (assignedJobPath.Count == costMatrix.GetLength(1))
+                    {
+                        // All jobs are assigned
+                        minTotalCost = Math.Min(minTotalCost, newTotalCost);
+                    }
+                    else if (newTotalCost < minTotalCost)
+                    {
+                        // Continue the path
+                        AssignRemainingJobsByByBranchBound(newTotalCost);
+                    }
+                    else
+                    {
+                        // do nothing
+                        // If the total cost is already greater than or equal to min total cost. No need to continue this path.
+                    }
+
+                    assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, jobIndex);
+                    assignedJobPath.RemoveAt(assignedJobPath.Count - 1);
+                }
+            }
+        }
+
+        private void FindGoodSolutionByGreedy()
+        {
+            int totalCost = 0;
+            for (int workerIndex = 0; workerIndex < this.costMatrix.GetLength(0); workerIndex++)
+            {
+                int minJobIndex = -1;
+                int minJobCost = this.FindMinJobPerWorker(workerIndex, out minJobIndex);
+
+                totalCost += minJobCost;
+                assignedJobBitMap = CommonUtility.Flip(assignedJobBitMap, minJobIndex);
+            }
+
+            this.minTotalCost = totalCost;
+            this.assignedJobBitMap = 0;
+        }
+
+        private int FindMinPossibleCost(int currentTotalCost)
+        {
+            int totalRemainingCost = 0;
+            for (int workerIndex = this.assignedJobPath.Count; workerIndex < this.costMatrix.GetLength(0); workerIndex++)
+            {
+                int minJobIndex = -1;
+                int minJobCost = this.FindMinJobPerWorker(workerIndex, out minJobIndex);
+                totalRemainingCost += minJobCost;
+            }
+
+            return currentTotalCost + totalRemainingCost;
+        }
+
+        private int FindMinJobPerWorker(int workerIndex, out int minJobIndex)
+        {
+            int minJobCost = int.MaxValue;
+            minJobIndex = -1;
+            for (int jobIndex = 0; jobIndex < this.costMatrix.GetLength(1); jobIndex++)
+            {
+                if (!CommonUtility.IsMarked(assignedJobBitMap, jobIndex))
+                {
+                    if (this.costMatrix[workerIndex, jobIndex] < minJobCost)
+                    {
+                        minJobCost = this.costMatrix[workerIndex, jobIndex];
+                        minJobIndex = jobIndex;
+                    }
+                }
+            }
+
+            return minJobCost;
         }
     }
 }

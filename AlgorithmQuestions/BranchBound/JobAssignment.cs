@@ -96,8 +96,8 @@ namespace AlgorithmQuestions
 
         private void AssignRemainingJobsByByBranchBound(int currentTotalCost)
         {
-            int bestPossible = FindMinPossibleCost(currentTotalCost);
-            if (minTotalCost <= bestPossible)
+            int lowerBoundCost = FindLowerBoundCost(currentTotalCost);
+            if (minTotalCost <= lowerBoundCost)
             {
                 return;
             }
@@ -149,7 +149,7 @@ namespace AlgorithmQuestions
             this.assignedJobBitMap = 0;
         }
 
-        private int FindMinPossibleCost(int currentTotalCost)
+        private int FindLowerBoundCost(int currentTotalCost)
         {
             int totalRemainingCost = 0;
             for (int workerIndex = this.assignedJobPath.Count; workerIndex < this.costMatrix.GetLength(0); workerIndex++)

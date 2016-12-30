@@ -9,7 +9,7 @@ namespace AlgorithmQuestions
     public static class LongestIncreasingSubsequence
     {
         /// <summary>
-        /// http://www.geeksforgeeks.org/dynamic-programming-set-4-longest-common-subsequence/
+        /// http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
         /// Algorithm:
         /// 1. Loop through all elements, find the longest increasing subsequence for each element. 
         ///    Use a lookup array to store the subsequences.

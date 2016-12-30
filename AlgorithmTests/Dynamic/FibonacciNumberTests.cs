@@ -25,6 +25,7 @@ namespace AlgorithmTests
             Assert.AreEqual(1, FibonacciNumber.GetNthByTopDown(2), "Wrong result for n=2.");
             Assert.AreEqual(2, FibonacciNumber.GetNthByTopDown(3), "Wrong result for n=3.");
             Assert.AreEqual(34, FibonacciNumber.GetNthByTopDown(9), "Wrong result for n=9.");
+            Assert.AreEqual(1134903170, FibonacciNumber.GetNthByTopDown(45), "Wrong result for n=45.");
         }
 
         [TestMethod]
@@ -35,6 +36,7 @@ namespace AlgorithmTests
             Assert.AreEqual(1, FibonacciNumber.GetNthByBottomUp(2), "Wrong result for n=2.");
             Assert.AreEqual(2, FibonacciNumber.GetNthByBottomUp(3), "Wrong result for n=3.");
             Assert.AreEqual(34, FibonacciNumber.GetNthByBottomUp(9), "Wrong result for n=9.");
+            Assert.AreEqual(1134903170, FibonacciNumber.GetNthByBottomUp(45), "Wrong result for n=45."); 
         }
 
     }

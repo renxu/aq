@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace AlgorithmQuestions
 {
     /// <summary>
-    /// The algorithms don't remember the best assignments, only the min cost.
+    /// http://www.geeksforgeeks.org/branch-bound-set-4-job-assignment-problem/
+    /// The implementation don't remember the best assignments, only the min cost.
     /// </summary>
     public class JobAssignment
     {

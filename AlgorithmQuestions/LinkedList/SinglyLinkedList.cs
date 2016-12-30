@@ -5,6 +5,10 @@ using System.Text;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/linked-list-set-1-introduction/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SinglyLinkedList<T> where T : IComparable
     {
         public SinglyLinkedListNode<T> First { get; set; }
@@ -105,6 +109,12 @@ namespace AlgorithmQuestions
             System.Console.WriteLine(sb.ToString());
         }
 
+        /// <summary>
+        /// http://www.geeksforgeeks.org/write-a-c-function-to-detect-loop-in-a-linked-list/
+        /// Time: O(n)
+        /// Space: O(1)
+        /// </summary>
+        /// <returns></returns>
         public bool DecectCircleByFloyd()
         {
             var head = new SinglyLinkedListNode<T>(default(T));
@@ -138,6 +148,8 @@ namespace AlgorithmQuestions
         /// This method is implemented using normal algorithm. 
         /// It can also Floyd circle-detect algorithm, but it is unncessarily complex.
         /// See the link for more details: http://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
+        /// Time: O(n)
+        /// Space: O(n)
         /// </summary>
         /// <returns></returns>
         public bool DecectAndRemoveCircle()

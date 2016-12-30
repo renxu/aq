@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace AlgorithmQuestions
 {
     /// <summary>
+    /// http://www.geeksforgeeks.org/graph-and-its-representations/
     /// Graph with linked list representation.
     /// </summary>
     public class LinkedListGraph : IGraph

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
-    // 1 1 2 3 5 8 13 21 34...
+    /// <summary>
+    /// http://www.geeksforgeeks.org/dynamic-programming-set-1/
+    /// 1 1 2 3 5 8 13 21 34...
+    /// </summary>
     public static class FibonacciNumber
     {
         public static int GetNthByNormal(int n)
@@ -37,15 +36,20 @@ namespace AlgorithmQuestions
                 lookup[i] = -1;
             }
 
+            return GetNthByTopDown(n, lookup);
+        }
+
+        private static int GetNthByTopDown(int n, int[] lookup)
+        {
             if (lookup[n] == -1)
             {
                 if (n <= 1)
                 {
-                    lookup[n] = n;
+                    lookup[n] = n; // lookup[0] = 0, lookup[1] = 1
                 }
                 else
                 {
-                    lookup[n] = GetNthByTopDown(n - 1) + GetNthByTopDown(n - 2);
+                    lookup[n] = GetNthByTopDown(n - 1, lookup) + GetNthByTopDown(n - 2, lookup);
                 }
             }
 

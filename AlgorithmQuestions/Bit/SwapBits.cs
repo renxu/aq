@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/swap-bits-in-a-given-number/
+    /// Given a number x and two positions (from right side, e.g. 0, 1, 2, ...) in binary representation of x, 
+    /// write a function that swaps n bits at given two positions and returns the result. It is also given that the two sets of bits do not overlap.
+    /// </summary>
     public static class SwapBits
     {
         /// <summary>
@@ -22,12 +27,7 @@ namespace AlgorithmQuestions
             {
                 throw new ArgumentException();
             }
-
-            if (p1 == p2)
-            {
-                return number;
-            }
-
+            
             for (int i = 0; i < n; i++)
             {
                 number = SwapPair(number, p1 + i, p2 + i);
@@ -50,12 +50,7 @@ namespace AlgorithmQuestions
             {
                 throw new ArgumentException();
             }
-
-            if (p1 == p2)
-            {
-                return number;
-            }
-
+            
             int section1 = (number >> p1) & ((1 << n) - 1);
             int section2 = (number >> p2) & ((1 << n) - 1);
 

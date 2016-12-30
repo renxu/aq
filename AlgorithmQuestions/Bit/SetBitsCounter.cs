@@ -9,6 +9,7 @@ namespace AlgorithmQuestions
     public static class SetBitsCounter
     {
         /// <summary>
+        /// http://www.geeksforgeeks.org/count-total-set-bits-in-all-numbers-from-1-to-n/
         /// Given a positive integer n, count the total number of set bits in binary representation of all numbers from 1 to n.
         /// For example:
         /// Input: n = 3
@@ -24,6 +25,7 @@ namespace AlgorithmQuestions
         /// Output: 13
         /// 
         /// Time: O(nlogn)
+        /// Space: O(1)
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
-    // Examples: 
-    // LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
-    // LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
-
+    /// <summary>
+    /// http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
+    /// Examples: 
+    /// LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
+    /// LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
+    /// </summary>
     public static class LongestCommonSubsequence
     {
         /// <summary>

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/backtracking-set-1-the-knights-tour-problem/
+    /// </summary>
     public class KnightsTour
     {
         public int ChessSize { get; set; }

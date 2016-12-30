@@ -9,6 +9,15 @@ namespace AlgorithmQuestions
 {
     public static class MajorityElement
     {
+        /// <summary>
+        /// http://www.geeksforgeeks.org/majority-element/
+        /// Use a hashtable (Dictionary) to maintain key and count. 
+        /// Time: O(n)
+        /// Space: O(n)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="majority"></param>
+        /// <returns></returns>
         public static bool Find(int[] input, out int majority)
         {
             CommonUtility.ThrowIfNull(input);

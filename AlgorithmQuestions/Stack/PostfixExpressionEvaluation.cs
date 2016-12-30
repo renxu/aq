@@ -32,6 +32,8 @@ namespace AlgorithmQuestions
         ///     a) If the element is a number, push it into the stack
         ///     b) If the element is a operator, pop operands for the operator from stack. Evaluate the operator and push the result back to the stack
         /// 3) When the expression is ended, the number in the stack is the final answer
+        /// Time: O(n)
+        /// Space: O(n)
         /// </summary>
         /// <param name="postfixExpression"></param>
         /// <param name="separator"></param>

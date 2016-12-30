@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
+    /// </summary>
     public static class PowerCaculator
     {
         public static double Pow(double x, double y)

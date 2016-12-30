@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    // http://www.geeksforgeeks.org/archives/18754
     // Implement two stacks in an array
     // The idea is to start two stacks from two extreme corners of arr[]. stack1 starts from the leftmost element, 
     // the first element in stack1 is pushed at index 0. The stack2 starts from the rightmost corner, the first 

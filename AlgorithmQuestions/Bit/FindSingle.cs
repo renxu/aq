@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/find-the-element-that-appears-once/
+    /// Time O(n)
+    /// Space O(1)
+    /// </summary>
     public static class FindSingle
     {
         public static int Find(int[] array)

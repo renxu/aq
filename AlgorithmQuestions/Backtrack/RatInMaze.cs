@@ -4,7 +4,9 @@ using System.Text;
 
 namespace AlgorithmQuestions
 {
-    // Question: http://www.geeksforgeeks.org/backttracking-set-2-rat-in-a-maze/
+    /// <summary>
+    /// http://www.geeksforgeeks.org/backttracking-set-2-rat-in-a-maze/
+    /// </summary>
     public class RatInMaze
     {
         public const int CellBlocked = 0;

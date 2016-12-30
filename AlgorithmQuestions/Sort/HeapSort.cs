@@ -2,6 +2,9 @@
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://geeksquiz.com/heap-sort/
+    /// </summary>
     public static class HeapSort
     {
         //Since a Binary Heap is a Complete Binary Tree, it can be easily represented as array and array based representation is space efficient.

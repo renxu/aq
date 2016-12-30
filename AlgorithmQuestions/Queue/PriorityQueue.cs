@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/priority-queue-set-1-introduction/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class PriorityQueue<T> where T:IComparable
     {
         private Dictionary<int, Queue<T>> queues = null;

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BinarySearchTree<T> where T : IComparable
     {
         public BinaryTreeNode<T> Root { get; set; }
@@ -176,6 +180,7 @@ namespace AlgorithmQuestions
 
         #region Inorder predecessor and successor for a given key in BST
         /// <summary>
+        /// http://www.geeksforgeeks.org/inorder-predecessor-successor-given-key-bst/
         /// There is BST given with root node with key part as integer only. 
         /// You need to find the inorder successor and predecessor of a given key. 
         /// In case the given key is not found in BST, then return the two values within which this key will lie.
@@ -189,6 +194,8 @@ namespace AlgorithmQuestions
         /// 2.2. If the found node has right child, the successor must be the most left leaf of the right substree. Otherwise, the successor is the upper bound.
         /// 3. If the value is not found:
         /// 3.1 Return lower bound as precessor and upper bound as successor.
+        /// Time: O(logn)
+        /// Space: O(1)
         /// </summary>
         /// <param name="value"></param>
         /// <param name="predecessor"></param>
@@ -282,6 +289,11 @@ namespace AlgorithmQuestions
             }
         }
 
+        /// <summary>
+        /// http://www.geeksforgeeks.org/find-the-minimum-element-in-a-binary-search-tree/
+        /// </summary>
+        /// <param name="currentNode"></param>
+        /// <returns></returns>
         private T FindMinInSubtree(BinaryTreeNode<T> currentNode)
         {
             if (currentNode.LeftChild != null)
@@ -298,6 +310,7 @@ namespace AlgorithmQuestions
 
         #region Two nodes of a BST are swapped, correct the BST
         /// <summary>
+        /// http://www.geeksforgeeks.org/fix-two-swapped-nodes-of-bst/
         /// Algorithm:  Since inorder traversal of BST is always a sorted array, the problem can be reduced to a problem 
         /// where two elements of a sorted array are swapped. There are two cases that we need to handle:
         /// 1. The swapped nodes are not adjacent in the inorder traversal of the BST.

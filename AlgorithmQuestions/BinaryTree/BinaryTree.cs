@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/binary-tree-set-1-introduction/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class BinaryTree<T> where T: IComparable
     {
         public BinaryTreeNode<T> Root { get; set; }
@@ -21,6 +25,7 @@ namespace AlgorithmQuestions
 
         /// <summary>
         /// In this implementation: Breadth-first traversal uses a queue, no recursion.
+        /// Time complexity: O(n)
         /// Space complexity: O(n/2)
         /// </summary>
         /// <returns></returns>
@@ -52,6 +57,10 @@ namespace AlgorithmQuestions
             return traversal;
         }
 
+        /// <summary>
+        /// http://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<BinaryTreeNode<T>> TraverseDepthFirstPreOrder()
         {
             var traversal = new List<BinaryTreeNode<T>>();

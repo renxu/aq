@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+    /// </summary>
     public static class DepthFirstTraveral
     {
         /// <summary>

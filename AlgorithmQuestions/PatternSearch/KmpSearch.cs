@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/
+    /// Time: O(n) n is text length
+    /// Space: O(m) m is pattern lenght
+    /// </summary>
     public class KmpSearch
     {
         public static IList<int> Search(string text, string pattern)

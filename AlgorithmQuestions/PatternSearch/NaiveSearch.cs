@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/searching-for-patterns-set-1-naive-pattern-searching/
+    /// </summary>
     public static class NaiveSearch
     {
         /// <summary>

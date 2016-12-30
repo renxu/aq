@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/linear-search/
+    /// </summary>
     public static class LinearSearch
     {
         //Problem: Given an array arr[] of n elements, write a function to search a given element x in arr[].
@@ -13,7 +16,6 @@ namespace AlgorithmQuestions
         //- Start from the leftmost element of arr[] and one by one compare x with each element of arr[]
         //- If x matches with an element, return the index. (return the first match)
         //- If x doesn’t match with any of elements, return -1.
-        // Refer to http://quiz.geeksforgeeks.org/linear-search/
 
         /// <summary>
         /// Looks for target number in the input array.

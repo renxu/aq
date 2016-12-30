@@ -31,6 +31,7 @@ namespace AlgorithmQuestions
             }
         }
 
+        // http://www.geeksforgeeks.org/union-find/
         // Algrithm:
         // 1. Put all vertices into separate set;
         // 2. Get all edges of the graph;
@@ -39,7 +40,8 @@ namespace AlgorithmQuestions
         // 3.2 If they belong to the same set already, a circle has been detected.
         // 3.3 If not, and union the sets.
         // 3.4 Continue to the next edge.
-        // Time complexity: O(E*V)???
+        // Time complexity: O(E*V)
+        // Space complexity: O(V)
         private static bool DetectCircleInUndirected(IGraph graph)
         {
             var sets = new List<SinglyLinkedList<int>>();
@@ -87,6 +89,7 @@ namespace AlgorithmQuestions
             sets.Remove(set2);
         }
 
+        //http://www.geeksforgeeks.org/detect-cycle-in-a-graph/
         //Solution:
         //Depth First Traversal can be used to detect cycle in a Graph.
         //DFS for a connected graph produces a tree. There is a cycle in a graph only if there is a back edge present in the graph. 
@@ -99,7 +102,7 @@ namespace AlgorithmQuestions
         //If we reach a vertex that is already in the recursion stack, then there is a cycle in the tree. 
         //The edge that connects current vertex to the vertex in the recursion stack is back edge. 
         //
-        // Time complexity: O(E+V)???
+        // Time complexity: O(E+V)
         // Note: This implemention need improvement to support unconnected graph.
         private static bool DetectCircleInDirected(IGraph graph)
         {

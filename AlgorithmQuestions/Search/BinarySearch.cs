@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/binary-search/
+    /// </summary>
     public static class BinarySearch
     {
         private const int NotFound = -1;

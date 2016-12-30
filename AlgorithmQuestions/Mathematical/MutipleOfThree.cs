@@ -9,6 +9,7 @@ namespace AlgorithmQuestions
     public static class MutipleOfThree
     {
         /// <summary>
+        /// http://www.geeksforgeeks.org/write-an-efficient-method-to-check-if-a-number-is-multiple-of-3/
         /// If sum of digits in a number is multiple of 3 then number is multiple of 3.
         /// </summary>
         /// <param name="number"></param>

@@ -9,6 +9,7 @@ namespace AlgorithmQuestions
     public class StronglyConnectedComponents
     {
         /// <summary>
+        /// http://www.geeksforgeeks.org/strongly-connected-components/
         /// How it works:
         /// Let's divide the graph into N subgraphs. Each subgraph is a strongly connected component (SCC). Now treat each SCC as one node, 
         /// forming a simplified graph of the original graph. The new SCC graph must be acyclic; otherwise, the SCC nodes in a cycle can form a 
@@ -24,6 +25,8 @@ namespace AlgorithmQuestions
         /// that we want to visit in the transpose graph! Following the nodes from the previous stack, DFS will find all SCC in the transpose
         /// graph.
         /// 
+        /// Time: O(n*2)
+        /// Space: O(n)
         /// </summary>
         /// <param name="graph"></param>
         /// <returns>Vertices of sub graphs.</returns>

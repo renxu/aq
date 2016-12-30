@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
+    /// </summary>
     public static class BreadthFirstTraveral
     {
         /// <summary>

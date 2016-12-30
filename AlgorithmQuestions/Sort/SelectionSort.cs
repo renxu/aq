@@ -1,5 +1,8 @@
 ﻿namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/selection-sort/
+    /// </summary>
     public static class SelectionSort
     {
         //The selection sort algorithm sorts an array by repeatedly finding the minimum element(considering ascending order) from unsorted part and putting it at the beginning.The algorithm maintains two subarrays in a given array.

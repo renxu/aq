@@ -1,5 +1,9 @@
 ﻿namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/counting-inversions/
+    /// Two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j
+    /// </summary>
     public class InversionCounter
     {
         private int[] inputs;

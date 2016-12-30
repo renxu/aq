@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+    /// </summary>
     public static class StringPermutation
     {
         public static IList<string> FindPermutation(string input)

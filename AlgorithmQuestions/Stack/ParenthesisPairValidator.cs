@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 namespace AlgorithmQuestions
 {
     /// <summary>
+    /// http://www.geeksforgeeks.org/archives/6547
     /// Given an expression string exp, write a program to examine whether the pairs and the orders of “{“,”}”,”(“,”)”,”[“,”]” 
     /// are correct in exp. For example, the program should print true for exp = “[()]{}{[()()]()}” and false for exp = “[(])”
+    /// Time: O(n)
+    /// Space: O(n)
     /// </summary>
     public class ParenthesisPairValidator
     {

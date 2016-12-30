@@ -5,6 +5,7 @@ using System.Text;
 namespace AlgorithmQuestions
 {
     /// <summary>
+    /// http://www.geeksforgeeks.org/graph-and-its-representations/
     /// Graph with matrix representation.
     /// </summary>
     public class MatrixGraph: IGraph
@@ -149,14 +150,12 @@ namespace AlgorithmQuestions
 
         #region Topological sort
         /// <summary>
+        /// http://www.geeksforgeeks.org/topological-sorting/
         /// Algorithm: In DFS, we start from a vertex, we first print it and then recursively call DFS for its adjacent vertices. 
         /// In topological sorting, we use a temporary stack. We don’t print the vertex immediately, we first recursively call 
         /// topological sorting for all its adjacent vertices, then push it to a stack. Finally, print contents of stack. 
         /// Note that a vertex is pushed to stack only when all of its adjacent vertices (and their adjacent vertices and so on) 
         /// are already in stack.
-        /// 
-        /// The algorithm is greedy. We start from the source vertice and span out, similarly to spanning tree. Each time, 
-        /// among the remaining nodes, we span to a node which has the shortest distance to the source node.
         /// </summary>
         /// <returns></returns>
 
@@ -206,6 +205,17 @@ namespace AlgorithmQuestions
         #endregion
 
         #region Dijkstra's shortest path
+        /// <summary>
+        /// http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
+        /// The algorithm is greedy. We start from the source vertice and span out, similarly to spanning tree. Each time, 
+        /// among the remaining nodes, we span to a node which has the shortest distance to the source node/source group.
+        /// 
+        /// Time: ???
+        /// Space: O(n)
+        /// </summary>
+        /// <param name="sourceVertextIndex"></param>
+        /// <param name="targetVertextIndex"></param>
+        /// <returns></returns>
         public int[] DijkstrasShortestPath(int sourceVertextIndex, int targetVertextIndex)
         {
             var distances = new List<GraphEdge>(); // Weight is the distance to the source node.
@@ -291,6 +301,12 @@ namespace AlgorithmQuestions
         #endregion
 
         #region Longest path in DAG
+        /// <summary>
+        /// http://www.geeksforgeeks.org/find-longest-path-directed-acyclic-graph/
+        /// </summary>
+        /// <param name="sourceVertexindex"></param>
+        /// <param name="targetVertextIndex"></param>
+        /// <returns></returns>
         public int GetLongestPath(int sourceVertexindex, int targetVertextIndex)
         {
             if(!this.IsDirected)

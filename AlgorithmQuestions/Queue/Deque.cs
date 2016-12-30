@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/deque-set-1-introduction-applications/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class Deque<T> where T: IComparable
     {
         public void EnqueueFront(T element)

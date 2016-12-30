@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://quiz.geeksforgeeks.org/binary-heap/
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class HeapBasic<T> where T: IComparable
     {
         private const int SizeLimit = 1000;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/greedy-algorithms-set-3-huffman-coding/
+    /// </summary>
     public class HuffmanTree
     {
         private HuffmanTree()

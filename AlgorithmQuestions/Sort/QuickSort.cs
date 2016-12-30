@@ -2,6 +2,9 @@
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://geeksquiz.com/quick-sort/
+    /// </summary>
     public static class QuickSort
     {
         //Quicksort is a divide and conquer algorithm.Quicksort first divides a large array into two smaller sub-arrays: 

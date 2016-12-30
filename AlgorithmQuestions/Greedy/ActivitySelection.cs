@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/greedy-algorithms-set-1-activity-selection-problem/
+    /// 1) Sort the activities according to their finishing time
+    /// 2) Select the first activity from the sorted array and print it.
+    /// 3) Do following for remaining activities in the sorted array.
+    /// …….a) If the start time of this activity is greater than the finish time of previously selected activity then select this activity and print it.
+    /// </summary>
     public static class ActivitySelection
     {
         public class Activity

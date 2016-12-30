@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithmQuestions
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/median-of-two-sorted-arrays/
+    /// </summary>
     public static class MedianOfTwoSortedArray
     {
         /*

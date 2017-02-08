@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Backtrack\KnightsTour.cs" />
     <Compile Include="Backtrack\RatInMaze.cs" />
+    <Compile Include="Backtrack\RegularExpressionMatching.cs" />
     <Compile Include="Backtrack\StringPermutation.cs" />
     <Compile Include="BinaryTree\TraversalOrder.cs" />
     <Compile Include="Bit\FindSingle.cs" />

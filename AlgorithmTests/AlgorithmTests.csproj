@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Backtrack\RegularExpressionMatchingTests.cs" />
     <Compile Include="Backtrack\RatInMazeTests.cs" />
     <Compile Include="Backtrack\KnightsTourTests.cs" />
     <Compile Include="Backtrack\StringPermutationTests.cs" />

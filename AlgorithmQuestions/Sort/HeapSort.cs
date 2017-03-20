@@ -47,5 +47,60 @@ namespace AlgorithmQuestions
 
             return inputs;
         }
+
+        public static int[] SortInPlace(int[] inputs)
+        {
+            if (inputs == null)
+            {
+                throw new ArgumentNullException(nameof(inputs));
+            }
+
+            // Build max heap for sorting asc
+            // Run sift down operation on all non-leaf nodes (from the last to the first)
+            int lastNonLeafNodeIndex = inputs.Length / 2 - 1;
+            for (int i = lastNonLeafNodeIndex; i >= 0; i--)
+            {
+                SiftDown(inputs, i, inputs.Length);
+            }
+
+            // Extract head and put it in the back
+            for (int i = inputs.Length - 1; i > 0; i--)
+            {
+                Swap(inputs, 0, i);
+                SiftDown(inputs, 0, i);
+            }
+
+            return inputs;
+        }
+
+        private static void SiftDown(int[] inputs, int i, int heapSize)
+        {
+            int left = i * 2 + 1;
+            int right = i * 2 + 2;
+
+            int largest = i;
+            if (left < heapSize && inputs[left] > inputs[largest])
+            {
+                largest = left;
+            }
+
+            if (right < heapSize && inputs[right] > inputs[largest])
+            {
+                largest = right;
+            }
+
+            if (largest != i)
+            {
+                Swap(inputs, largest, i);
+                SiftDown(inputs, largest, heapSize);
+            }
+        }
+
+        private static void Swap(int[] inputs, int index1, int index2)
+        {
+            inputs[index1] = inputs[index1] ^ inputs[index2];
+            inputs[index2] = inputs[index1] ^ inputs[index2];
+            inputs[index1] = inputs[index1] ^ inputs[index2];
+        }
     }
 }

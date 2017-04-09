@@ -42,13 +42,17 @@ namespace Threading
             // Note, Thread.Suspend and Thread.Resume has been deprecated.  
             // Please use other classes in System.Threading, such as Monitor, Mutex, Event, and Semaphore, 
             // to synchronize Threads or protect resources. 
+#pragma warning disable CS0618 // Type or member is obsolete
             workerThread.Suspend();
+#pragma warning restore CS0618 // Type or member is obsolete
             Console.WriteLine("Main thread called workerThread.Suspend().");
 
             Console.WriteLine("Main thread is going to sleep for another 5 seconds while worker thread is suspended.");
             Thread.Sleep(5000);
 
+#pragma warning disable CS0618 // Type or member is obsolete
             workerThread.Resume();
+#pragma warning restore CS0618 // Type or member is obsolete
             Console.WriteLine("Main thread called workerThread.Resume().");
 
             Console.WriteLine("Main thread is going to sleep for 5 seconds while worker thread is doing its work.");

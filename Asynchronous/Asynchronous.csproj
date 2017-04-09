@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Asynchronous.EventBasedExample</StartupObject>
+    <StartupObject>Asynchronous.TaskBasedExample</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Asynchronous
 {
@@ -13,6 +9,8 @@ namespace Asynchronous
             int threshold = new Random().Next(10);
             Counter c = new Counter(threshold);
             Console.WriteLine(string.Format("The counter threshold is {0}.", threshold));
+
+            // Register an event handler
             c.ThresholdReached += c_ThresholdReached;
 
             Console.WriteLine("press 'a' key to increase total by one.");
@@ -49,6 +47,7 @@ namespace Asynchronous
             }
         }
 
+        // Event handler method must contain EventArgs parameter.
         protected virtual void OnThresholdReached(EventArgs e)
         {
             EventHandler handler = ThresholdReached;
@@ -58,6 +57,7 @@ namespace Asynchronous
             }
         }
 
+        // Event declaration
         public event EventHandler ThresholdReached;
     }
 }

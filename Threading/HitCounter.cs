@@ -51,16 +51,14 @@ namespace Threading
 
         public class HitCounter
         {
-            private const int HistoryWindowInSeconds = 10; // Change the history window to 10 seconds to see the results easily
+            private const int HistoryWindowInSeconds = 60 * 5; // Change the history window to 10 seconds to see the results easily
             private const int BucketNumber = HistoryWindowInSeconds * 2; // Double the needed buckets to provide buffer
             private int[] counters = null;
-            private int[] timestampsInSeconds = null;
 
             /** Initialize your data structure here. */
             public HitCounter()
             {
                 counters = new int[BucketNumber];
-                timestampsInSeconds = new int[BucketNumber];
 
                 // A separate thread to clean older history to avoid locking
                 Thread cleanThread = new Thread(this.CleanHistory);
